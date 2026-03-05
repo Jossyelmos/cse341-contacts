@@ -1,0 +1,10 @@
+POST http://localhost:5000/api/contactModel
+Content-Type: application/json
+
+{
+    "firstName": "cHRISTOFER",
+    "lastName": "henderson",
+    "email": "hends@gmail.com",
+    "favoriteColor": "Purple",
+    "birthday": "January 31th"
+}
