@@ -8,6 +8,19 @@ const app = express();
 connectDb();
 
 app.use(express.json({ extended: false }));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Z-key'
+    );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+});
+app.get('/', (req, res) => {
+    res.json({ message: "Welcome to Contacts API" });
+  });
+  
 app.use('/contacts', require('./routes/Contacts'));
 app.use('/api/contactModel', require('./Api/contacts'));
 

@@ -16,6 +16,7 @@ route.post('/', async (req, res) => {
 
     let contactModel = new Contact(contact);
     await contactModel.save();
+
     res.json(contactModel);
 });
 
