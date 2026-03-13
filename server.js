@@ -2,11 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const connectDb = require('./db/db');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
 connectDb();
 
+app.use(cors());
 app.use(express.json({ extended: false }));
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
