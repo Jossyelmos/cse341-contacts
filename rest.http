@@ -2,9 +2,9 @@ PUT http://localhost:5000/contacts/69a9be8e3464d581e7149211
 Content-Type: application/json
 
 {
-    "firstName": "Omowumi",
-    "lastName": "Oluniyi",
-    "email": "precious@gmail.com",
+    "firstName": "O",
+    "lastName": "O",
+    "email": "precious",
     "favoriteColor": "Baby Pink",
     "birthday": "July 19th"
 }
@@ -15,3 +15,16 @@ GET http://localhost:5000/contacts
 
 ### Get single contact with id
 GET http://localhost:5000/contacts/69a9cb6028ecba503d96b72d
+
+
+### Post request
+POST http://localhost:5000/api/contactModel
+Content-Type: application/json
+
+{
+    "firstName": "Ogad",
+    "lastName": "Clampson",
+    "email": "ac@gmail.com",
+    "favoriteColor": "Magenta",
+    "birthday": "July 7th"
+}

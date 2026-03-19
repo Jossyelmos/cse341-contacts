@@ -3,6 +3,7 @@ const express = require('express');
 const connectDb = require('./db/db');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const contactValdator = require("./middleware/validator");
 
 const app = express();
 
@@ -24,7 +25,7 @@ app.get('/', (req, res) => {
   });
   
 app.use('/contacts', require('./routes/Contacts'));
-app.use('/api/contactModel', require('./Api/contacts'));
+app.use('/api/contactModel', contactValdator, require('./Api/contacts'));
 
 const port = process.env.PORT || 5000;
 
